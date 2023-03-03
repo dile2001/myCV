@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Link from '../components/Link';
+import {Link as RouterLink} from 'react-router-dom';
 import List from '../components/List';
 function Projects({ userName }) {
     const [loading, setLoading] = useState(true);
@@ -25,11 +25,12 @@ function Projects({ userName }) {
             <span>Loading...</span>
             ) : (
             <div>
-            <List items={projects.map((project) => ({
-                field: project.name,
-                value: <Link url={project.html_url}
-                title={project.html_url} />,
-            }))} />
+                <List items={projects.map((project) => ({
+                    field: project.name,
+                    value: <RouterLink to={`/projects/${project.name}`}>
+                        {project.name}
+                    </RouterLink>,
+                }))} />
             </div>
             )}
         </div>
