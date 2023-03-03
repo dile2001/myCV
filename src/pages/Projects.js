@@ -28,7 +28,7 @@ function Projects({ userName }) {
             <List items={projects.map((project) => ({
                 field: project.name,
                 value: <Link url={project.html_url}
-                itle={project.html_url} />,
+                title={project.html_url} />,
             }))} />
             </div>
             )}
