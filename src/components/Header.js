@@ -13,6 +13,7 @@ function Header({logo}) {
             url='https://reactjs.org'
             title='Learn React'
         />
+        <h1>My Portfolio</h1>
       </header>
   );
 }
